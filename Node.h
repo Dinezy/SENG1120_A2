@@ -11,7 +11,6 @@ template <typename value_type>
 class Node
 {
     public:
-        typedef EToll value_type; // type
 
         Node(); // constructor
 

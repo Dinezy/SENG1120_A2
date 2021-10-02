@@ -80,6 +80,32 @@ void LinkedList::addToTail(value_type data){
     }
 }
 
+//TODO: add to .h
+void LinkedList::removeFromHead(){
+    //edge case when there is only 1 object left in list
+    if (size == 1) {
+        delete head;    //remove head
+        head = NULL;    //set to null
+        tail = NULL;    //set to null
+        size--;         //size now = 0      list is now empty
+    }else{
+        Node *temp_prev = current->getPrevNode();                   //assign current nodes to temp vars
+        Node *temp_next = current->getNextNode();
+
+        head = temp_next;                                       //head is now the next index in list
+        temp_next->setPrevNode(NULL);                           //the NEW heads prev is null
+        delete current;                                         //delete current
+        temp_prev = NULL;                                       //reset temp vars
+        temp_next = NULL;
+        setCurrent();                                           //reset current to head
+        size--;
+        }
+}
+
+
+
+//TODO: Obsolete
+/*
 void LinkedList::remove(const string plate) {
     //edge case when there is only 1 object left in list
     if (size == 1) {
@@ -122,7 +148,7 @@ void LinkedList::remove(const string plate) {
             }
         }
     }
-}
+}*/
 
 void LinkedList::operator+=(LinkedList &tollBooth){
 
