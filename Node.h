@@ -3,7 +3,7 @@
 // Name: Toby Dines
 // Student Number: c3328008
 // Date:
-
+#include <cstdlib>
 #ifndef Node_header
 #define Node_header
 template <typename value_type>
@@ -16,13 +16,13 @@ class Node
 
         ~Node(); // destructor
 
-        void setNextNode(Node* next_);
+        void setNextNode(Node<value_type>* next_);
 
-        Node* getNextNode() const;
+        Node<value_type>* getNextNode() const;
 
-        void setPrevNode(Node* prev_);
+        void setPrevNode(Node<value_type>* prev_);
 
-        Node* getPrevNode() const;
+        Node<value_type>* getPrevNode() const;
 
         void setData(value_type& data_);
 
@@ -35,6 +35,6 @@ class Node
 
 };
 
-#include "EToll.h"
+#include "Node.hpp"
 #endif //Node_header
 

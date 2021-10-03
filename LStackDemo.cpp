@@ -53,9 +53,9 @@ int main()
 
 	cout << "Start lists:" << endl;
 	cout << "Booth 1: " << tollBooth1 << endl;
-	cout << "Booth 2: " << tollBooth2 << endl;
+	/*cout << "Booth 2: " << tollBooth2 << endl;
 	cout << "Daily total: " << dailyReport << endl;
-	
+
 	cout << "=====================================================" << endl;
 	cout << "Removing vehicle 'NIO324' from Booth 2." << endl;
 	tollBooth2.remove("NIO324");
@@ -92,7 +92,7 @@ int main()
 
 	cout << "Booth 1: " << tollBooth1 << endl;
 	cout << "Booth 2: " << tollBooth2 << endl;
-	cout << "Daily report: " << dailyReport  << endl << endl;
+	cout << "Daily report: " << dailyReport  << endl << endl;*/
 	
 	cout << "The program has finished." << endl;
 	return 0;

@@ -12,10 +12,11 @@
 
 #ifndef LinkedList_header
 #define LinkedList_header
-
+template <typename value_type>
 class LinkedList {
 public:
-    typedef Node::value_type value_type;
+    //typedef Node::value_type value_type;
+
 
     LinkedList(); // constructor
     ~LinkedList(); // destructor
@@ -24,32 +25,13 @@ public:
     //Postcondition: data is written from the head to a new node (left to right)
     void addToHead(value_type data);
 
-    //precondtion: None
-    //postcondition: data is written from the tail to a new node (right to left)
-    void addToTail(value_type data);
 
-    //precondition: that the size of the linkedlist is > 0
-    //postcondition: the Node from the linkedlist has been removed, by comparing a string against a EToll licence
-    void remove(const string plate);
-
-    //preconditon: none
-    //postcondition: value is incremented to amount of vehicles of the same type of string that is passed to function
-    const int count(const string count);
+    const int getCount(const std::string type);
 
     //precondition: none
     //postcondition: value is added to totaliser from get charge
-    const double totalIncome();
+    const double getTotalIncome();
 
-    //precondition: linkedlist thats being passed/ referenced must exist/ be initialised
-    //postcondition: concats 2 linked lists
-    void operator+=(LinkedList &tollBooth);
-
-    //precondition: LinkedList must exist thats being passed to function
-    //postcondition: removes passed linked list from another list
-    void operator-=(LinkedList &tollBooth);
-
-    //precondition: none
-    //postcondition: sets current to head
     void setCurrent();
 
     //precondtion: none
@@ -68,32 +50,30 @@ public:
     //postcondition: returns bool pending if list is empty or not
     const bool emptyList() const;
 
-    //precondition: none
-    //postcondition: bubble sorts linkedlist
-    void order();
+
+
+    void removeFromHead();
+
+    int getSize();
+
+    std::string getPlate();
 
 
 
 
 private:
-    Node* head;
-    Node* tail;
-    Node* current;
+    Node<value_type>* head;
+    Node<value_type>* tail;
+    Node<value_type>* current;
     int size;
 
-    //precondition: curr_->getNextNode() == next_ && next->getPrevNode() == curr_
-    //postcondition: the 2 nodes are swapped
-    void swap(Node* curr_, Node* next_);
+
 
 
 
 };
-    //precondition: passed linkedlist must exist/ be initialised
-    //postcondition: prints linkedlist to console
-    std::ostream &operator<<(std::ostream &out, LinkedList &tollBooth);
+#include "LinkedList.hpp"
 
 #endif //LinkedList_header
-
-
 
 

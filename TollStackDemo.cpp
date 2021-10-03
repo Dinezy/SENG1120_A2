@@ -45,7 +45,7 @@ void initialize(TollStack<EToll> &l1, TollStack<EToll> &l2)
 
 int main()
 {
-	TollStack<EToll> tollBooth1;
+	/*TollStack<EToll> tollBooth1;
 	TollStack<EToll> tollBooth2;
 	TollStack<EToll> dailyReport;
 	
@@ -92,7 +92,7 @@ int main()
 
 	cout << "Booth 1: " << tollBooth1 << endl;
 	cout << "Booth 2: " << tollBooth2 << endl;
-	cout << "Daily report: " << dailyReport  << endl << endl;
+	cout << "Daily report: " << dailyReport  << endl << endl;*/
 	
 	cout << "The program has finished." << endl;
 	return 0;
