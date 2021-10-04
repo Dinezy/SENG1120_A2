@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include "LinkedList.h"
 
-#ifndef LStack Header
-#define LStack Header
+#ifndef LStack_Header
+#define LStack_Header
 template <typename value_type>
 class LStack {
 public:
@@ -30,25 +30,10 @@ public:
     //Postcondition: Returns BOOL output if the LStack is empty. T if empty, F if > 0
     bool isEmpty();
 
-    //Precondition: The input argument is of type string
-    //Postcondition: Removes Queried plate from LStack
-    void remove(const std::string plate);
-
     //precondition: LStacks thats being passed/ referenced must exist/ be initialised
     //postcondition: concats 2 LStacks
     void operator+=(LStack<value_type> &tollBooth);
 
-    //precondition: LStack must exist thats being passed to function
-    //postcondition: removes passed LStack from another LStack
-    void operator-=(LStack<value_type> &tollBooth);
-
-    //preconditon: none
-    //postcondition: Queries getCount from LinkedList and returns value
-    const int count(const std::string count);
-
-    //precondition: none
-    //postcondition: Queries getTotalincome from LinkedList and returns value
-    const int totalIncome();
 
 protected:
     LinkedList<value_type> list;
