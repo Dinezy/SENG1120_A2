@@ -51,9 +51,10 @@ int main()
 	
 	initialize(tollBooth1, tollBooth2);
 
+
 	cout << "Start lists:" << endl;
 	cout << "Booth 1: " << tollBooth1 << endl;
-	/*cout << "Booth 2: " << tollBooth2 << endl;
+	cout << "Booth 2: " << tollBooth2 << endl;
 	cout << "Daily total: " << dailyReport << endl;
 
 	cout << "=====================================================" << endl;
@@ -63,7 +64,7 @@ int main()
 	tollBooth1.remove("BYC567");
 	cout << "Removing vehicle 'GFV349' from Booth 2." << endl;
 	tollBooth2.remove("GFV349");
-	
+
 	cout << "Concatenating the two lists onto list 'Daily Report'." << endl << endl;
 	dailyReport += tollBooth1;
 	dailyReport += tollBooth2;
@@ -92,7 +93,7 @@ int main()
 
 	cout << "Booth 1: " << tollBooth1 << endl;
 	cout << "Booth 2: " << tollBooth2 << endl;
-	cout << "Daily report: " << dailyReport  << endl << endl;*/
+	cout << "Daily report: " << dailyReport  << endl << endl;
 	
 	cout << "The program has finished." << endl;
 	return 0;

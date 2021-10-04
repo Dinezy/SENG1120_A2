@@ -8,8 +8,6 @@
 #include <cstdlib>
 #include <string>
 
-//typedef Node::value_type value_type;
-
 
 template <typename value_type>
 LinkedList<value_type>::LinkedList(){
@@ -20,6 +18,7 @@ LinkedList<value_type>::LinkedList(){
     size = 0;
 
 }
+
 template <typename value_type>
 LinkedList<value_type>::~LinkedList(){
 
@@ -30,6 +29,7 @@ LinkedList<value_type>::~LinkedList(){
    }
 
 }
+
 template <typename value_type>
 void LinkedList<value_type>::addToHead(value_type data){
     //if the linked list is empty
@@ -56,9 +56,9 @@ void LinkedList<value_type>::addToHead(value_type data){
     }
 }
 
-//TODO: add to .h
 template <typename value_type>
 void LinkedList<value_type>::removeFromHead(){
+    setCurrent();
     //edge case when there is only 1 object left in list
     if (size == 1) {
         delete head;    //remove head
@@ -78,7 +78,6 @@ void LinkedList<value_type>::removeFromHead(){
         size--;
         }
 }
-
 
 template <typename value_type>
 void LinkedList<value_type>::setCurrent(){
@@ -140,9 +139,10 @@ int LinkedList<value_type>::getSize(){
     return size;
 }
 
+
 template <typename value_type>
-std::string LinkedList<value_type>::getPlate(){
-    return current->getData().get_licence();
+value_type LinkedList<value_type>::returnHead(){
+    return head->getData();
 }
 
 

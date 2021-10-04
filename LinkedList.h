@@ -56,7 +56,7 @@ public:
 
     int getSize();
 
-    std::string getPlate();
+    value_type returnHead();
 
 
 

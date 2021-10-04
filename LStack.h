@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include "LinkedList.h"
 
-#ifndef SENG1120_A2_LSTACK_H
-#define SENG1120_A2_LSTACK_H
+#ifndef LStack Header
+#define LStack Header
 template <typename value_type>
 class LStack {
 public:
@@ -17,9 +17,9 @@ public:
 
     void push(value_type data);
 
-    void pop();
+    value_type pop();
 
-    void peek();
+    value_type peek();
 
     bool isEmpty();
 
@@ -31,6 +31,8 @@ public:
 
     const int count(const std::string count);
 
+    const int totalIncome();
+
 
 private:
     LinkedList<value_type> list;
@@ -40,4 +42,4 @@ private:
 template <typename value_type>
 std::ostream &operator<<(std::ostream &out, LStack<value_type> &tollBooth);
 #include "LStack.hpp"
-#endif //SENG1120_A2_LSTACK_H
+#endif //end of LStack header
