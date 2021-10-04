@@ -59,8 +59,10 @@ void LinkedList<value_type>::addToHead(value_type data){
 template <typename value_type>
 void LinkedList<value_type>::removeFromHead(){
     setCurrent();
-    //edge case when there is only 1 object left in list
-    if (size == 1) {
+
+    if(size == 0){          //edge case if entering with no objects in list
+        return;
+    }else if (size == 1) {  //edge case when there is only 1 object left in list
         delete head;    //remove head
         head = NULL;    //set to null
         tail = NULL;    //set to null
@@ -136,13 +138,13 @@ const double LinkedList<value_type>::getTotalIncome(){
 
 template <typename value_type>
 int LinkedList<value_type>::getSize(){
-    return size;
+    return size; // returns size of LinkedList
 }
 
 
 template <typename value_type>
 value_type LinkedList<value_type>::returnHead(){
-    return head->getData();
+    return head->getData();     //returns the data at the head of the list
 }
 
 
