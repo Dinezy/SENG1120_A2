@@ -55,25 +55,37 @@ std::ostream &operator<<(std::ostream &out, TollStack<value_type> &tollBooth){
 
 template <typename value_type>
 const int TollStack<value_type>::count(const std::string type){
-/*
+
     TollStack <value_type> tempStack;              //creates temporary stack
     int count = 0;                              //initialise count as 0
-    while(!isEmpty()){                          //loop till current stack is empty
-        if(peek().get_type() == type){          //if the top of the stacks type is == to the queried type
+    while(!LStack <value_type>::isEmpty()){                          //loop till current stack is empty
+        if(LStack <value_type>::peek().get_type() == type){          //if the top of the stacks type is == to the queried type
             count++;                            //increment count
         }
-        tempStack.push(pop());                  //move the top of stack to temp stack to index to next object
+        tempStack.LStack <value_type>::push(LStack <value_type>::pop());                  //move the top of stack to temp stack to index to next object
     }
 
-    while(!tempStack.isEmpty()){                //loop till temp stack is empty
-        push(tempStack.pop());                  //moves temp stack back to original stack
+    while(!tempStack.LStack <value_type>::isEmpty()){                //loop till temp stack is empty
+        LStack<value_type>::push(tempStack.LStack <value_type>::pop());                  //moves temp stack back to original stack
     }
-*/
 
-    return LStack<value_type>::list.getCount(type); //  queries get count in linkedList
+
+    return count; //  queries get count in linkedList
 }
 
 template <typename value_type>
 const int TollStack<value_type>::totalIncome(){
-    return LStack<value_type>::list.getTotalIncome(); //queries getTotalIncome in LinkedList
+
+    int total = 0;                                                                      //total is initially 0
+    TollStack tempStack;
+
+    while(!LStack <value_type> :: isEmpty()){                                                //loop till end of the Stack
+        total += LStack <value_type> :: peek().get_charge();
+        tempStack.LStack <value_type>::push(LStack <value_type>:: pop());
+    }
+    while(!tempStack.LStack <value_type>::isEmpty()){
+        LStack<value_type>::push(tempStack.LStack <value_type>::pop());                  //moves temp stack back to original stack
+    }
+
+    return total; //queries getTotalIncome in LinkedList
 }

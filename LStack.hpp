@@ -13,6 +13,10 @@ LStack<value_type>::LStack(){
 template <typename value_type>
 LStack<value_type>::~LStack(){
     //due to list being stored on the stack, once it goes out of scope the compiler removes it from memory
+    //however dan wants me to do this :(
+    while(!isEmpty()){
+        pop();              //empties the stack
+    }
 }
 
 // add to head

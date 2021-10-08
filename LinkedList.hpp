@@ -68,14 +68,12 @@ void LinkedList<value_type>::removeFromHead(){
         tail = NULL;    //set to null
         size--;         //size now = 0      list is now empty
     }else{
-        Node<value_type> *temp_prev = current->getPrevNode();                   //assign current nodes to temp vars
-        Node<value_type> *temp_next = current->getNextNode();
+        Node<value_type> *temp_next = current->getNextNode();                      //assign current nodes to temp vars
 
         head = temp_next;                                       //head is now the next index in list
         temp_next->setPrevNode(NULL);                           //the NEW heads prev is null
         delete current;                                         //delete current
-        temp_prev = NULL;                                       //reset temp vars
-        temp_next = NULL;
+        temp_next = NULL;                                       //reset temp vars
         setCurrent();                                           //reset current to head
         size--;
         }
