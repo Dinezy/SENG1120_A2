@@ -49,22 +49,13 @@ void LStack<value_type>::operator+=(LStack<value_type> &tollBooth) {
 
     //Creating temporary Stacks
     LStack <value_type> tempStack1;
-    LStack <value_type> tempStack2;
 
-    while (!isEmpty()) {
-        tempStack1.push(pop());                 //moves the current stack to a temporary stack
+    while(!tollBooth.isEmpty()){                        //loop while the this stack is not empty
+        tempStack1.push(tollBooth.peek());              //moves the current stack to a temporary stack
+        push(tollBooth.pop());                          //concats to top of stack
     }
-
-    while(!tollBooth.isEmpty()){                //loop while the requested stack is not empty
-        push(tollBooth.peek());                 //push the top of the queried stack to current stack object
-        tempStack2.push(tollBooth.pop());       //push queried stack to another stack object to index to next object
-    }
-
-    while (!tempStack2.isEmpty()) {             //loop while the temporary stack is not empty
-        tollBooth.push(tempStack2.pop());       //move the temporary stack back to the original LStack object
-    }
-    while (!tempStack1.isEmpty()) {             //loop while the temporary stack is not empty
-        push(tempStack1.pop());                 //moves back the original LStack back to the object. Now the objects are concatenated
+    while(!tempStack1.isEmpty()){                       //loop while the temporary stack is not empty
+        tollBooth.push(tempStack1.pop());               //move the temporary stack back to the original LStack object
     }
 }
 
